@@ -1,0 +1,36 @@
+body {
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+button {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
+
+.send {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 60%;
+}
