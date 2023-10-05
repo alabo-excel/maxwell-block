@@ -10,6 +10,7 @@ const MainPage = () => {
   const { address } = useAccount()
   const [send, setSend] = useState(false)
 
+  console.log(address)
   const { data, isError, } = useBalance({
     address: address,
   })
@@ -37,19 +38,22 @@ const MainPage = () => {
         <h4>Maxwell</h4>
         {address ? <button onClick={() => open()}>{address}</button> : <button onClick={() => open()}>Connect</button>}
       </header>
-      <section>
+      {address ? <section>
         <h1>
           Balance: {data?.formatted} {data?.symbol}
         </h1>
         {send ? <button onClick={() => setSend(false)}>Transactions </button> : <button onClick={() => setSend(true)}>Send </button>}
-      </section>
-      {send ? <SendFunds /> :
-        <div>
-          <h3>Transactions</h3>
-          {transactions.length <= 0 ? <p className=''>No  transactions</p> : <div>
-            {transactions.map((single) => <div className="card"> <p>From: {single.from_address}</p> <p>{single.block_timestamp.slice(0, 10)}</p> </div>)}
-          </div>}
-        </div>}
+        {send ? <SendFunds /> :
+          <div>
+            <h3>Transactions</h3>
+            {transactions.length <= 0 ? <p className=''>No  transactions</p> : <div>
+              {transactions.map((single) => <div className="card"> <p>From: {single.from_address}</p> <p>{single.block_timestamp.slice(0, 10)}</p> </div>)}
+            </div>}
+          </div>
+        }
+      </section> : <section>hello</section>}
+
+
     </div>
   );
 };
