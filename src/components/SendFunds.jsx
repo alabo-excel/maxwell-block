@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import { useAccount, useBalance } from 'wagmi'
-import { useSendTransaction, usePrepareSendTransaction } from 'wagmi'
+import { useSendTransaction, usePrepareSendTransaction, useAccount } from 'wagmi'
+import { parseEther } from 'viem'
 
 const SendFunds = () => {
   const [resciver, setReceiver] = useState('')
   const [amount, setAmount] = useState('')
-  const { config } = usePrepareSendTransaction({
+  const { address } = useAccount()
+
+  const { data, isLoading, isSuccess, sendTransaction } = useSendTransaction({
+    from: address,
     to: resciver,
-    value: amount,
+    value: parseEther('0.001'),
   })
-  const { data, isLoading, isSuccess, sendTransaction } =
-    useSendTransaction(config)
+
   return (
     <div className='send'>
       <h3>Send Crypto</h3>

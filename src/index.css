@@ -70,3 +70,7 @@ header {
   justify-content: space-between;
   padding: 20px;
 }
+
+input:focus button:focus {
+  outline: none;
+}

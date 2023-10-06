@@ -15,7 +15,7 @@ const metadata = {
 }
 
 
-const chains = [goerli, arbitrum]
+const chains = [goerli, arbitrum, mainnet]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
