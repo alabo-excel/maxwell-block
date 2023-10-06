@@ -10,7 +10,7 @@ const MainPage = () => {
   const { address } = useAccount()
   const [send, setSend] = useState(false)
 
-  console.log(address)
+  // console.log(address)
   const { data, isError, } = useBalance({
     address: address,
   })
@@ -35,14 +35,16 @@ const MainPage = () => {
   return (
     <div>
       <header>
-        <h4>Maxwell</h4>
+        <h2>Maxwell</h2>
         {address ? <button onClick={() => open()}>{address}</button> : <button onClick={() => open()}>Connect</button>}
       </header>
-      {address ? <section>
+      {address ? <section className='main-con'>
         <h1>
           Balance: {data?.formatted} {data?.symbol}
         </h1>
-        {send ? <button onClick={() => setSend(false)}>Transactions </button> : <button onClick={() => setSend(true)}>Send </button>}
+        <div className='button'>
+          {send ? <button onClick={() => setSend(false)}>Transactions </button> : <button onClick={() => setSend(true)}>Send </button>}
+        </div>
         {send ? <SendFunds /> :
           <div>
             <h3>Transactions</h3>
@@ -51,9 +53,24 @@ const MainPage = () => {
             </div>}
           </div>
         }
-      </section> : <section>hello</section>}
-
-
+      </section> : <section>
+        <div className="hero">
+          <div>
+            <h1>Welcome to the world of Secured Financing!</h1>
+          </div>
+          <img src="./scene-professional-esports-gamer-profile-colored-with-red-blue-light-generative-ai-removebg-preview.png" />
+        </div>
+        <div id="community">
+          <h2>Join our Community!</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius consequuntur deleniti rerum impedit et. Incidunt, mollitia fugiat autem eligendi placeat delectus est tempora veritatis, in, fugit saepe magni velit.</p>
+          <input placeholder='Enter your Email' type="text" />
+          <button>Join US</button>
+        </div>
+        <footer>
+          Copyright @ Maxwell 2023
+        </footer>
+      </section>
+      }
     </div>
   );
 };

@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   padding: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
+  background-color: #110052;
+  color: white;
+  font-family: 'AR One Sans', sans-serif;
+  min-height: 100vh;
 }
 
 button {
@@ -28,9 +37,61 @@ input {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(216, 225, 235, 0.2) 0px 8px 24px;
   border-radius: 20px;
   padding-left: 15px;
   padding-right: 15px;
   width: 60%;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+
+
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0px 0px;
+}
+
+.hero div {
+  width: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hero img {
+  width: 50%;
+  /* margin-bottom: -10px; */
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #06070E;
+}
+
+#community{
+  text-align: center;
+  background-color: #011627;
+  padding: 60px
+}
+
+#community p{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#community input{
+  width: 30%;
+}
+
+.main-con{
+  padding: 50px;
+}
+
+.button{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
